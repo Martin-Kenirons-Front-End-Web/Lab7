@@ -1,20 +1,38 @@
+<!-- The header section of the page, which includes a toolbar and a title -->
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <!-- The title of the application displayed in the toolbar -->
     <ion-title>
-      Blank
+      Movie App
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
+<!-- The main content section of the page -->
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+ 
+  <!-- A commented-out unordered list that was previously used to display movies -->
+  <!-- <ul>
+    <li *ngFor="let x of myMovies">
+       Displays the movie poster 
+      <img [src]="x.Poster" alt="">
+       Displays the movie title
+      <h2>{{x.Title}}</h2>
+       Displays the movie release year 
+      <p>{{x.Year}}</p>
+    </li>
+  </ul> -->
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <!-- A card layout to display each movie in the list -->
+  <ion-card *ngFor="let movie of myMovies">
+    <!-- Displays the movie poster image -->
+    <img alt="movie Poster" src={{movie.Poster}} />
+    <ion-card-header>
+      <!-- Displays the movie title in the card header -->
+      <ion-card-title>{{movie.Title}}</ion-card-title>
+      <!-- Displays the movie release year as a subtitle in the card header -->
+      <ion-card-subtitle>{{movie.Year}}</ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
+
 </ion-content>
